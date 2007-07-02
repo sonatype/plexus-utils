@@ -15,6 +15,8 @@ import java.io.Reader;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
+import org.codehaus.plexus.util.xml.XmlReader;
+
 //import java.util.Hashtable;
 
 //TODO best handling of interning issues
@@ -25,8 +27,9 @@ import java.io.UnsupportedEncodingException;
 //TODO review code for use of bufAbsoluteStart when keeping pos between next()/fillBuf()
 
 /**
- * Absolutely minimal implementaion of XMLPULL V1 API
+ * Absolutely minimal implementation of XMLPULL V1 API. Encoding handling done with XmlReader
  *
+ * @see org.codehaus.plexus.util.xml.XmlReader
  * @author <a href="http://www.extreme.indiana.edu/~aslom/">Aleksander Slominski</a>
  */
 
@@ -530,22 +533,23 @@ public class MXParser
             throw new IllegalArgumentException("input stream can not be null");
         }
         Reader reader;
-        if(inputEncoding != null) {
-            try {
-                if(inputEncoding != null) {
-                    reader = new InputStreamReader(inputStream, inputEncoding);
-                } else {
-                    reader = new InputStreamReader(inputStream);
-                }
-            } catch (UnsupportedEncodingException une) {
-                throw new XmlPullParserException(
-                    "could not create reader for encoding "+inputEncoding+" : "+une, this, une);
+        try {
+            if(inputEncoding != null) {
+                reader = new InputStreamReader(inputStream, inputEncoding);
+            } else {
+                reader = new XmlReader(inputStream);
             }
-        } else {
-            reader = new InputStreamReader(inputStream);
+        } catch (UnsupportedEncodingException une) {
+            throw new XmlPullParserException(
+                "could not create reader for encoding "+inputEncoding+" : "+une, this, une);
+        }
+        catch ( IOException e )
+        {
+            throw new XmlPullParserException(
+                "could not create reader : "+e, this, e);
         }
         setInput(reader);
-        //must be  here as reest() was called in setInput() and has set this.inputEncoding to null ...
+        //must be  here as reset() was called in setInput() and has set this.inputEncoding to null ...
         this.inputEncoding = inputEncoding;
     }
     
