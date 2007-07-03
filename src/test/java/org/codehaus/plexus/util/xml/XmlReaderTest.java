@@ -47,6 +47,16 @@ public class XmlReaderTest
         assertEquals( xml, result );
     }
 
+    public void testNoXmlHeader()
+    throws IOException
+    {
+        String xml = "<text>text with no XML header</text>";
+        byte[] xmlContent = xml.getBytes( "UTF-8" );
+        XmlReader reader = new XmlReader( new ByteArrayInputStream( xmlContent ) );
+        String result = IOUtil.toString( reader );
+        assertEquals( xml, result );
+    }
+
     public void testDefaultEncoding()
     throws IOException
     {
@@ -99,6 +109,12 @@ public class XmlReaderTest
     throws IOException
     {
         checkXmlReader( TEXT_EUC_JP, "EUC-JP" );
+    }
+
+    public void testEBCDICEncoding()
+    throws IOException
+    {
+        checkXmlReader( "simple text in EBCDIC", "CP1047" );
     }
 
     public void testInappropriateEncoding()

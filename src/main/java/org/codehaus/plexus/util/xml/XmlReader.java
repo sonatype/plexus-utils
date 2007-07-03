@@ -67,6 +67,8 @@ public class XmlReader extends Reader
 
     private static final String UTF_16 = "UTF-16";
 
+    private static final String EBCDIC = "CP1047";
+
     private static String _staticDefaultEncoding = null;
 
     private Reader _reader;
@@ -680,6 +682,10 @@ public class XmlReader extends Reader
         {
             encoding = UTF_8;
         }
+        else if ( bytes[0] == 0x4C && bytes[1] == 0x6F && bytes[2] == 0xA7 && bytes[3] == 0x94 )
+        {
+            encoding = EBCDIC;
+        }
         return encoding;
     }
 
@@ -703,7 +709,7 @@ public class XmlReader extends Reader
                 offset += c;
                 max -= c;
                 c = is.read( bytes, offset, max );
-                firstGT = new String( bytes, 0, offset ).indexOf( ">" );
+                firstGT = new String( bytes, 0, offset, guessedEnc ).indexOf( ">" );
             }
             if ( firstGT == -1 )
             {
