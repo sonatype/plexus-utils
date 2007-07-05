@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.io.StringReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.HttpURLConnection;
@@ -704,12 +705,14 @@ public class XmlReader extends Reader
             int max = BUFFER_SIZE;
             int c = is.read( bytes, offset, max );
             int firstGT = -1;
+            String xmlProlog = null;
             while ( c != -1 && firstGT == -1 && offset < BUFFER_SIZE )
             {
                 offset += c;
                 max -= c;
                 c = is.read( bytes, offset, max );
-                firstGT = new String( bytes, 0, offset, guessedEnc ).indexOf( ">" );
+                xmlProlog = new String( bytes, 0, offset, guessedEnc );
+                firstGT = xmlProlog.indexOf( '>' );
             }
             if ( firstGT == -1 )
             {
@@ -726,8 +729,7 @@ public class XmlReader extends Reader
             if ( bytesRead > 0 )
             {
                 is.reset();
-                Reader reader = new InputStreamReader( new ByteArrayInputStream( bytes, 0, firstGT + 1 ), guessedEnc );
-                BufferedReader bReader = new BufferedReader( reader );
+                BufferedReader bReader = new BufferedReader( new StringReader( xmlProlog ) );
                 StringBuffer prolog = new StringBuffer();
                 String line = bReader.readLine();
                 while ( line != null )
