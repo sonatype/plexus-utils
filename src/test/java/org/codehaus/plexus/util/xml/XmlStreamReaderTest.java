@@ -216,4 +216,15 @@ public class XmlStreamReaderTest
         xml = "<element encoding='attribute value'/>";
         checkXmlContent( xml, "UTF-8" );
     }
+
+    /* PLXUTILS-150 */
+    public void testMultibyteCharacterAcross4096Byte()
+    throws IOException {
+    	InputStream is = getClass().getClassLoader().getResourceAsStream("xmlWithMultibyteCharactersAcross4096Byte.xml");
+        new XmlStreamReader(is);
+
+        // shouldn't throw
+        // java.io.IOException: XML prolog or ROOT element not found on first 4096 bytes
+        // under IBM's J9
+    }
 }
