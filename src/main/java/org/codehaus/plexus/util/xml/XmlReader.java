@@ -714,6 +714,12 @@ public class XmlReader extends Reader
                 max -= c;
                 c = is.read( bytes, offset, max );
                 xmlProlog = new String( bytes, 0, offset, guessedEnc );
+                while ( xmlProlog.length() == 1 && Character.getNumericValue(xmlProlog.charAt(0)) == -1 && offset > 1 )
+                {
+                	// a workaround for IBM J9 JVM's strange new String behavior, see PLXUTILS-150
+                	offset -= 1;
+                	xmlProlog = new String( bytes, 0, offset, guessedEnc );
+                }
                 firstGT = xmlProlog.indexOf( '>' );
             }
             if ( firstGT == -1 )
