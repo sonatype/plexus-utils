@@ -69,6 +69,18 @@ public class BourneShellTest
         assertEquals( "/bin/sh -c cd \"\\usr\\local\\\'something else\'\" && chmod", executable );
     }
 
+    public void testQuoteWorkingDirectoryAndExecutable_WDPathWithDollarSign()
+    {
+        Shell sh = newShell();
+
+        sh.setWorkingDirectory( "/tmp/abc$xyz" );
+        sh.setExecutable( "chmod" );
+
+        String commandLine = sh.getCommandLine( "", new String[]{} ).get(0);
+
+        assertEquals( "cd \"/tmp/abc\\$xyz\" && chmod", commandLine );
+    }
+
     public void testPreserveSingleQuotesOnArgument()
     {
         Shell sh = newShell();
