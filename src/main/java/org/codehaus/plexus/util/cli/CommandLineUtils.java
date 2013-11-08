@@ -24,20 +24,20 @@ package org.codehaus.plexus.util.cli;
  * SOFTWARE.
  */
 
-import org.codehaus.plexus.util.Os;
-import org.codehaus.plexus.util.StringUtils;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.Vector;
+
+import org.codehaus.plexus.util.Os;
+import org.codehaus.plexus.util.StringUtils;
 
 /**
  * @author <a href="mailto:trygvis@inamo.no">Trygve Laugst&oslash;l </a>
@@ -45,7 +45,7 @@ import java.util.Vector;
  */
 public abstract class CommandLineUtils
 {
-    private static Map processes = Collections.synchronizedMap( new HashMap() );
+    private static Set processes = Collections.synchronizedSet( new HashSet() );
 
     static
     {
@@ -53,10 +53,10 @@ public abstract class CommandLineUtils
         {
             public void run()
             {
-                if ( ( processes != null ) && ( processes.size() > 0 ) )
+                if ( processes != null && processes.size() > 0 )
                 {
                     System.err.println( "Destroying " + processes.size() + " processes" );
-                    for ( Iterator it = processes.values().iterator(); it.hasNext(); )
+                    for ( Iterator it = processes.iterator(); it.hasNext(); )
                     {
                         System.err.println( "Destroying process.." );
                         ( (Process) it.next() ).destroy();
@@ -114,9 +114,13 @@ public abstract class CommandLineUtils
 
         Process p;
 
-        p = cl.execute();
+        try {
+        	p = Runtime.getRuntime().exec(cl.getCommandline(), cl.getEnvironmentVariables(), cl.getWorkingDirectory());
+        } catch (IOException e) {
+        	throw new CommandLineException("Failed to start process", e);
+        }
 
-        processes.put( new Long( cl.getPid() ), p );
+        processes.add( p );
 
         StreamFeeder inputFeeder = null;
 
@@ -150,7 +154,7 @@ public abstract class CommandLineUtils
                 long now = System.currentTimeMillis();
                 long timeoutInMillis = 1000L * timeoutInSeconds;
                 long finish = now + timeoutInMillis;
-                while ( isAlive( p ) && ( System.currentTimeMillis() < finish ) )
+                while ( isAlive( p ) && System.currentTimeMillis() < finish )
                 {
                     Thread.sleep( 10 );
                 }
@@ -188,13 +192,13 @@ public abstract class CommandLineUtils
                 }
             }
 
-            processes.remove( new Long( cl.getPid() ) );
+            processes.remove( p );
 
             return returnValue;
         }
         catch ( InterruptedException ex )
         {
-            killProcess( cl.getPid() );
+            killProcess( p );
             throw new CommandLineException( "Error while executing external command, process killed.", ex );
         }
         finally
@@ -287,29 +291,21 @@ public abstract class CommandLineUtils
 
     /**
      * Kill a process launched by executeCommandLine methods
-     * Doesn't work correctly on windows, only the cmd process will be destroy but not the sub process (<a href="http://bugs.sun.com/bugdatabase/view_bug.do;:YfiG?bug_id=4770092">Bug ID 4770092</a>)
      *
-     * @param pid The pid of command return by Commandline.getPid()
+     * @param p The process to kill
      */
-    public static void killProcess( long pid )
+    public static void killProcess( Process p )
     {
-        Process p = (Process) processes.get( new Long( pid ) );
-
         if ( p != null )
         {
             p.destroy();
             System.out.println( "killed." );
-            processes.remove( new Long( pid ) );
+            processes.remove( p );
         }
         else
         {
             System.out.println( "don't exist." );
         }
-    }
-
-    public static boolean isAlive( long pid )
-    {
-        return ( processes.get( new Long( pid ) ) != null );
     }
 
     public static boolean isAlive( Process p ) {
@@ -325,7 +321,7 @@ public abstract class CommandLineUtils
     public static String[] translateCommandline( String toProcess )
         throws Exception
     {
-        if ( ( toProcess == null ) || ( toProcess.length() == 0 ) )
+        if ( toProcess == null || toProcess.length() == 0 )
         {
             return new String[0];
         }
@@ -395,7 +391,7 @@ public abstract class CommandLineUtils
             v.addElement( current.toString() );
         }
 
-        if ( ( state == inQuote ) || ( state == inDoubleQuote ) )
+        if ( state == inQuote || state == inDoubleQuote )
         {
             throw new CommandLineException( "unbalanced quotes in " + toProcess );
         }
@@ -499,7 +495,7 @@ public abstract class CommandLineUtils
     public static String toString( String[] line )
     {
         // empty path return empty string
-        if ( ( line == null ) || ( line.length == 0 ) )
+        if ( line == null || line.length == 0 )
         {
             return "";
         }
