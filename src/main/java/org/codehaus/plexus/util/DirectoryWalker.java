@@ -354,7 +354,9 @@ public class DirectoryWalker
             return;
         }
 
-        Arrays.sort(files);
+        if ( sorted ) {
+            Arrays.sort(files);
+        }
 
         DirectoryWalker.DirStackEntry curStackEntry = new DirectoryWalker.DirStackEntry( dir, files.length );
         if ( dirStack.isEmpty() )
