@@ -44,8 +44,15 @@ limitations under the License.
     <system>JIRA</system>
     <url>http://jira.codehaus.org/browse/PLXUTILS</url>
   </issueManagement>
-
-  <build>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
