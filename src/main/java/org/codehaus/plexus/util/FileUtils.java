@@ -530,7 +530,20 @@ public class FileUtils
     public static void fileDelete( String fileName )
     {
         File file = new File( fileName );
-        file.delete();
+        if (Java7Detector.isJava7())
+        {
+            try
+            {
+                NioFiles.deleteIfExists(file);
+            }
+            catch ( IOException e )
+            {
+                throw new RuntimeException( e );
+            }
+        } else
+        {
+            file.delete();
+        }
     }
 
     /**
@@ -1015,6 +1028,28 @@ public class FileUtils
         copyFileIfModified( source, new File( destinationDirectory, source.getName() ) );
     }
 
+    /**
+     * Creates a number of directories, as delivered from DirectoryScanner
+     * @param sourceBase The basedir used for the directory scan
+     * @param dirs The getIncludedDirs from the dirscanner
+     * @param destination The base dir of the output structure
+     */
+    public static void mkDirs(  final File sourceBase, String[] dirs,  final File destination )
+        throws IOException
+    {
+        for ( String dir : dirs )
+        {
+            File src = new File( sourceBase, dir);
+            File dst = new File( destination, dir);
+            if (Java7Detector.isJava7() && NioFiles.isSymbolicLink( src )){
+                File target = NioFiles.readSymbolicLink( src );
+                NioFiles.createSymbolicLink( dst, target );
+            } else {
+                dst.mkdirs();
+            }
+        }
+    }
+
 
     /**
      * Copy file from source to destination. The directories up to <code>destination</code> will be
@@ -1046,11 +1081,18 @@ public class FileUtils
             return;
         }
         mkdirsFor( destination );
-        doCopyFile( source, destination );
+        if (Java7Detector.isJava7())
+        {
+            NioFiles.copy( source, destination );
+        }
+        else
+        {
+            doCopyFile( source, destination );
+        }
 
         if ( source.length() != destination.length() )
         {
-            final String message = "Failed to copy full contents from " + source + " to " + destination;
+            String message = "Failed to copy full contents from " + source + " to " + destination;
             throw new IOException( message );
         }
     }
@@ -1445,7 +1487,7 @@ public class FileUtils
                 Thread.sleep( 10 );
                 return file.delete();
             }
-            catch ( InterruptedException ex )
+            catch ( InterruptedException ignore )
             {
                 return file.delete();
             }
