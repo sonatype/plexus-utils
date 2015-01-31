@@ -196,6 +196,18 @@ public class DirectoryScannerTest
         assertEquals( 5, includedDirs.size() );
     }
 
+    public void testShouldReturnDotFile()
+    {
+        DirectoryScanner ds = new DirectoryScanner();
+        ds.setBasedir( new File( "src/test/resources/directory-scanner-with-dot" ) );
+        ds.setFollowSymlinks( false );
+        ds.setIncludes( new String[] { ".gitignore" } );
+        ds.scan();
+        List<String> included = Arrays.asList( ds.getIncludedFiles() );
+        assertTrue( included.contains( "foo/.gitignore" ) );
+        assertTrue( included.contains( "fot/bar/munchy.txt" ) );
+        assertEquals( 4, included.size() );
+    }
 
     private void createTestDirectories()
         throws IOException
@@ -447,8 +459,7 @@ public class DirectoryScannerTest
         StringBuilder buffer = new StringBuilder();
         if ( !failedToExclude.isEmpty() )
         {
-            buffer.append( "Should NOT have included:\n" ).append(
-                                                                   StringUtils.join( failedToExclude.iterator(),
+            buffer.append( "Should NOT have included:\n" ).append( StringUtils.join( failedToExclude.iterator(),
                                                                                      "\n\t- " ) );
         }
 
@@ -459,8 +470,7 @@ public class DirectoryScannerTest
                 buffer.append( "\n\n" );
             }
 
-            buffer.append( "Should have included:\n" )
-                  .append( StringUtils.join( failedToInclude.iterator(), "\n\t- " ) );
+            buffer.append( "Should have included:\n" ).append( StringUtils.join( failedToInclude.iterator(), "\n\t- " ) );
         }
 
         if ( buffer.length() > 0 )
