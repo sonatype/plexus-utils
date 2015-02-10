@@ -41,7 +41,7 @@ public class BourneShellTest
 
         String executable = StringUtils.join( sh.getShellCommandLine( new String[]{} ).iterator(), " " );
 
-        assertEquals( "/bin/sh -c cd '/usr/local/bin' && 'chmod'", executable );
+        assertEquals( "/bin/bash -c cd '/usr/local/bin' && 'chmod'", executable );
     }
 
     public void testQuoteWorkingDirectoryAndExecutable_WDPathWithSingleQuotes()
@@ -53,7 +53,7 @@ public class BourneShellTest
 
         String executable = StringUtils.join( sh.getShellCommandLine( new String[]{} ).iterator(), " " );
 
-        assertEquals( "/bin/sh -c cd '/usr/local/'\"'\"'something else'\"'\"'' && 'chmod'", executable );
+        assertEquals( "/bin/bash -c cd '/usr/local/'\"'\"'something else'\"'\"'' && 'chmod'", executable );
     }
 
     public void testQuoteWorkingDirectoryAndExecutable_WDPathWithSingleQuotes_BackslashFileSep()
@@ -65,7 +65,7 @@ public class BourneShellTest
 
         String executable = StringUtils.join( sh.getShellCommandLine( new String[]{} ).iterator(), " " );
 
-        assertEquals( "/bin/sh -c cd '\\usr\\local\\\'\"'\"'something else'\"'\"'' && 'chmod'", executable );
+        assertEquals( "/bin/bash -c cd '\\usr\\local\\\'\"'\"'something else'\"'\"'' && 'chmod'", executable );
     }
 
     public void testPreserveSingleQuotesOnArgument()
@@ -143,7 +143,7 @@ public class BourneShellTest
         String[] lines = commandline.getShellCommandline();
         System.out.println( Arrays.asList( lines ) );
 
-        assertEquals( "/bin/sh", lines[0] );
+        assertEquals( "/bin/bash", lines[0] );
         assertEquals( "-c", lines[1] );
         assertEquals( "'chmod' '--password' ';password'", lines[2] );
 
@@ -155,7 +155,7 @@ public class BourneShellTest
         lines = commandline.getShellCommandline();
         System.out.println( Arrays.asList( lines ) );
 
-        assertEquals( "/bin/sh", lines[0] );
+        assertEquals( "/bin/bash", lines[0] );
         assertEquals( "-c", lines[1] );
         assertEquals( "'chmod' '--password' ';password'", lines[2] );
 
@@ -203,7 +203,7 @@ public class BourneShellTest
         String[] lines = commandline.getShellCommandline();
         System.out.println( Arrays.asList( lines ) );
 
-        assertEquals( "/bin/sh", lines[0] );
+        assertEquals( "/bin/bash", lines[0] );
         assertEquals( "-c", lines[1] );
         assertEquals( "'chmod' ' ' '|' '&&' '||' ';' ';;' '&' '()' '<' '<<' '>' '>>' '*' '?' '[' ']' '{' '}' '`'",
                       lines[2] );

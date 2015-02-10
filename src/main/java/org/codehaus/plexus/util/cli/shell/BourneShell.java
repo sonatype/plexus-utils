@@ -37,7 +37,7 @@ public class BourneShell
     public BourneShell( boolean isLoginShell )
     {
         setUnconditionalQuoting( true );
-        setShellCommand( "/bin/sh" );
+        setShellCommand( "/bin/bash" );
         setArgumentQuoteDelimiter( '\'' );
         setExecutableQuoteDelimiter( '\'' );
         setSingleQuotedArgumentEscaped( true );
