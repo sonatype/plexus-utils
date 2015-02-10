@@ -243,7 +243,7 @@ public class CommandlineTest
 
         assertEquals( "Command line size", 3, shellCommandline.length );
 
-        assertEquals( "/bin/sh", shellCommandline[0] );
+        assertEquals( "/bin/bash", shellCommandline[0] );
         assertEquals( "-c", shellCommandline[1] );
         String expectedShellCmd = "'/bin/echo' 'hello world'";
         if ( Os.isFamily( Os.FAMILY_WINDOWS ) )
@@ -273,7 +273,7 @@ public class CommandlineTest
 
         assertEquals( "Command line size", 3, shellCommandline.length );
 
-        assertEquals( "/bin/sh", shellCommandline[0] );
+        assertEquals( "/bin/bash", shellCommandline[0] );
         assertEquals( "-c", shellCommandline[1] );
         String expectedShellCmd = "cd '" + root.getAbsolutePath()
                                   + "path with spaces' && '/bin/echo' 'hello world'";
@@ -302,7 +302,7 @@ public class CommandlineTest
 
         assertEquals( "Command line size", 3, shellCommandline.length );
 
-        assertEquals( "/bin/sh", shellCommandline[0] );
+        assertEquals( "/bin/bash", shellCommandline[0] );
         assertEquals( "-c", shellCommandline[1] );
         String expectedShellCmd = "'/bin/echo' ''\"'\"'hello world'\"'\"''";
         if ( Os.isFamily( Os.FAMILY_WINDOWS ) )
@@ -325,7 +325,7 @@ public class CommandlineTest
 
         assertEquals( "Command line size", 3, shellCommandline.length );
 
-        assertEquals( "/bin/sh", shellCommandline[0] );
+        assertEquals( "/bin/bash", shellCommandline[0] );
         assertEquals( "-c", shellCommandline[1] );
 
         if ( Os.isFamily( Os.FAMILY_WINDOWS ) )
@@ -485,7 +485,7 @@ public class CommandlineTest
         }
 
         Commandline cmd = new Commandline();
-        //cmd.getShell().setShellCommand( "/bin/sh" );
+        //cmd.getShell().setShellCommand( "/bin/bash" );
         cmd.getShell().setQuotedArgumentsEnabled( true );
         cmd.setExecutable( "cat" );
         if ( Os.isFamily( Os.FAMILY_WINDOWS ) )
