@@ -31,6 +31,7 @@ public class DirectoryWalkerTest extends TestCase {
 
         WalkCollector collector = new WalkCollector();
         walker.addDirectoryWalkListener( collector );
+        walker.setSorted(true);
 
         walker.scan();
 

@@ -18,6 +18,7 @@ package org.codehaus.plexus.util;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
@@ -128,6 +129,8 @@ public class DirectoryWalker
     private List<DirectoryWalkListener> listeners;
 
     private boolean debugEnabled = false;
+
+    private boolean sorted = false;
 
     public DirectoryWalker()
     {
@@ -267,6 +270,11 @@ public class DirectoryWalker
         return false;
     }
 
+    public boolean isSorted()
+    {
+        return sorted;
+    }
+
     private String relativeToBaseDir( File file )
     {
         return file.getAbsolutePath().substring( baseDirOffset + 1 );
@@ -344,6 +352,10 @@ public class DirectoryWalker
         if ( files == null )
         {
             return;
+        }
+
+        if ( sorted ) {
+            Arrays.sort(files);
         }
 
         DirectoryWalker.DirStackEntry curStackEntry = new DirectoryWalker.DirStackEntry( dir, files.length );
@@ -427,4 +439,11 @@ public class DirectoryWalker
         }
     }
 
+    /**
+     * @param sorted If true, files are walked in alphabetical order according to {@link File#compareTo(java.io.File)}. Default is false.
+     */
+    public void setSorted(boolean sorted)
+    {
+        this.sorted = sorted;
+    }
 }
