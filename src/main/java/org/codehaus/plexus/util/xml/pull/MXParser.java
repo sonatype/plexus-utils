@@ -781,9 +781,9 @@ public class MXParser
         }
         if(text == null) {
             if(!usePC || eventType == START_TAG || eventType == END_TAG) {
-                text = new String(buf, posStart, posEnd - posStart);
+                text = new String(buf, posStart, posEnd - posStart).intern();
             } else {
-                text = new String(pc, pcStart, pcEnd - pcStart);
+                text = new String(pc, pcStart, pcEnd - pcStart).intern();
             }
         }
         return text;
