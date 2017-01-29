@@ -563,7 +563,7 @@ public interface XmlPullParser {
     int getNamespaceCount(int depth) throws XmlPullParserException;
 
     /**
-     * Returns the namespace prefixe for the given position
+     * Returns the namespace prefix for the given position
      * in the namespace stack.
      * Default namespace declaration (xmlns='...') will have null as prefix.
      * If the given index is out of range, an exception is thrown.
