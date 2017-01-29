@@ -517,7 +517,7 @@ public interface XmlPullParser {
      *
      * <p><b>Please notes:</b> The given value is used literally as replacement text
      * and it corresponds to declaring entity in DTD that has all special characters
-     * escaped: left angle bracket is replaced with &amp;lt;, ampersnad with &amp;amp;
+     * escaped: left angle bracket is replaced with &amp;lt;, ampersand with &amp;amp;
      * and so on.
      *
      * <p><b>Note:</b> The given value is the literal replacement text and must not
