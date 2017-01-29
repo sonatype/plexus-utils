@@ -720,7 +720,7 @@ public final class FileUtilsTest
         }
     }
 
-    public void testCopyDirectoryStructureWithAEmptyDirectoryStruture()
+    public void testCopyDirectoryStructureWithAEmptyDirectoryStructure()
         throws Exception
     {
         File from = new File( getTestDirectory(), "from" );
