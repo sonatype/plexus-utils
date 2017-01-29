@@ -89,7 +89,7 @@ public class DAG implements Cloneable, Serializable
      *
      * @param label The lable of the Vertex
      * @return New vertex if vertext of given label was not presenst in the DAG
-     *         or exising vertex if vertex of given labale was already added to DAG
+     *         or existing vertex if vertex of given labale was already added to DAG
      */
     public Vertex addVertex( final String label )
     {
