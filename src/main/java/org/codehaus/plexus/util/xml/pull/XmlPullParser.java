@@ -943,7 +943,7 @@ public interface XmlPullParser {
      * <a href="http://xmlpull.org/v1/doc/features.html#xml-roundtrip">FEATURE_XML_ROUNDTRIP</a>
      * (identified by URI: http://xmlpull.org/v1/doc/features.html#xml-roundtrip)
      * is enabled it is possible to do XML document round trip ie. reproduce
-     * exectly on output the XML input using getText():
+     * exactly on output the XML input using getText():
      * returned content is always unnormalized (exactly as in input).
      * Otherwise returned content is end-of-line normalized as described
      * <a href="http://www.w3.org/TR/REC-xml#sec-line-ends">XML 1.0 End-of-Line Handling</a>
