@@ -3021,7 +3021,7 @@ public class MXParser
                         +" pos="+pos+" posStart="+posStart+" posEnd="+posEnd
                         +" buf first 100 chars:"+new String(buf, 0, bufEnd < 100 ? bufEnd : 100));
         }
-        // at least one charcter must be read or error
+        // at least one character must be read or error
         final int len = buf.length - bufEnd > READ_CHUNK_SIZE ? READ_CHUNK_SIZE : buf.length - bufEnd;
         final int ret = reader.read(buf, bufEnd, len);
         if(ret > 0) {
