@@ -135,7 +135,7 @@ public class SweeperPoolTest extends TestCase
         pool.put( o2 );
         pool.put( o3 );
         pool.put( o4 );
-        //give the seeper some time to run
+        //give the sweeper some time to run
         synchronized ( this )
         {
             try

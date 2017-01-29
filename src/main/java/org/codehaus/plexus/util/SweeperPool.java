@@ -290,7 +290,7 @@ public class SweeperPool
         }
 
         /**
-         * Run the seeper.
+         * Run the sweeper.
          *
          * @see java.lang.Runnable#run()
          */
