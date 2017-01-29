@@ -963,7 +963,7 @@ public interface XmlPullParser {
      * <dt>IGNORABLE_WHITESPACE<dd>return characters that are determined to be ignorable white
      * space. If the FEATURE_XML_ROUNDTRIP is enabled all whitespace content outside root
      * element will always reported as IGNORABLE_WHITESPACE otherise rteporting is optional.
-     *  <br>Note: that element content may be delevered in multiple consecutive IGNORABLE_WHITESPACE events.
+     *  <br>Note: that element content may be delivered in multiple consecutive IGNORABLE_WHITESPACE events.
      * <dt>CDSECT<dd>
      * return text <em>inside</em> CDATA
      *  (ex. 'fo&lt;o' from &lt;!CDATA[fo&lt;o]]>)
