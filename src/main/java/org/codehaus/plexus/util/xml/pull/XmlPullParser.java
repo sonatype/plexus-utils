@@ -1001,7 +1001,7 @@ public interface XmlPullParser {
      * </dd>
      * </dl>
      *
-     * <p><strong>NOTE:</strong> there is no gurantee that there will only one TEXT or
+     * <p><strong>NOTE:</strong> there is no guarantee that there will only one TEXT or
      * IGNORABLE_WHITESPACE event from nextToken() as parser may chose to deliver element content in
      * multiple tokens (dividing element content into chunks)
      *
