@@ -1013,7 +1013,7 @@ public class MXParser
             throw new XmlPullParserException(
                 "processing namespaces must be enabled on parser (or factory)"+
                     " to have possible namespaces declared on elements"
-                    +(" (postion:"+ getPositionDescription())+")");
+                    +(" (position:"+ getPositionDescription())+")");
         }
         if (type != getEventType()
                 || (namespace != null && !namespace.equals (getNamespace()))
@@ -1034,7 +1034,7 @@ public class MXParser
                           ? " and" : "")
                     +(namespace != null && getNamespace() != null && !namespace.equals (getNamespace())
                           ? " namespace '"+getNamespace()+"'" : "")
-                    +(" (postion:"+ getPositionDescription())+")");
+                    +(" (position:"+ getPositionDescription())+")");
         }
     }
 

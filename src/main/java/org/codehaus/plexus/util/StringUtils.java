@@ -389,7 +389,7 @@ public class StringUtils
      *  count back from the end of the string by this many characters
      * @param end the position to end at (exclusive), negative means
      *  count back from the end of the String by this many characters
-     * @return substring from start position to end positon
+     * @return substring from start position to end position
      */
     public static String substring( String str, int start, int end )
     {
