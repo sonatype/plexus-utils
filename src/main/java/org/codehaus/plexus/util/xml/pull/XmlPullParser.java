@@ -493,7 +493,7 @@ public interface XmlPullParser {
      * If setInput(InputStream, inputEncoding) was called with an inputEncoding
      * value other than null, this value must be returned
      * from this method. Otherwise, if inputEncoding is null and
-     * the parser suppports the encoding detection feature
+     * the parser supports the encoding detection feature
      * (http://xmlpull.org/v1/doc/features.html#detect-encoding),
      * it must return the detected encoding.
      * If setInput(Reader) was called, null is returned.
