@@ -374,7 +374,7 @@ public interface XmlPullParser {
      * the DOCDECL event type is reported by nextToken()
      * and ignored by next().
      *
-     * If this featue is activated, then the document declaration
+     * If this feature is activated, then the document declaration
      * must be processed by the parser.
      *
      * <p><strong>Please note:</strong> If the document type declaration
@@ -411,7 +411,7 @@ public interface XmlPullParser {
      * <p>Example: call setFeature(FEATURE_PROCESS_NAMESPACES, true) in order
      * to switch on namespace processing. The initial settings correspond
      * to the properties requested from the XML Pull Parser factory.
-     * If none were requested, all feautures are deactivated by default.
+     * If none were requested, all features are deactivated by default.
      *
      * @exception XmlPullParserException If the feature is not supported or can not be set
      * @exception IllegalArgumentException If string with the feature name is null
