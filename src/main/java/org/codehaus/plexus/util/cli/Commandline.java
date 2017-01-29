@@ -756,7 +756,7 @@ public class Commandline
         private String[] parts;
 
         /* (non-Javadoc)
-         * @see org.codehaus.plexus.util.cli.Argumnt#setValue(java.lang.String)
+         * @see org.codehaus.plexus.util.cli.Argument#setValue(java.lang.String)
          */
         public void setValue( String value )
         {
@@ -767,7 +767,7 @@ public class Commandline
         }
 
         /* (non-Javadoc)
-         * @see org.codehaus.plexus.util.cli.Argumnt#setLine(java.lang.String)
+         * @see org.codehaus.plexus.util.cli.Argument#setLine(java.lang.String)
          */
         public void setLine( String line )
         {
@@ -786,7 +786,7 @@ public class Commandline
         }
 
         /* (non-Javadoc)
-         * @see org.codehaus.plexus.util.cli.Argumnt#setFile(java.io.File)
+         * @see org.codehaus.plexus.util.cli.Argument#setFile(java.io.File)
          */
         public void setFile( File value )
         {
@@ -794,7 +794,7 @@ public class Commandline
         }
 
         /* (non-Javadoc)
-         * @see org.codehaus.plexus.util.cli.Argumnt#getParts()
+         * @see org.codehaus.plexus.util.cli.Argument#getParts()
          */
         public String[] getParts()
         {
