@@ -557,7 +557,7 @@ public class StringUtils
      * <p>Splits the provided text into a array, based on a given separator.</p>
      *
      * <p>The separator is not included in the returned String array. The
-     * maximum number of splits to perfom can be controlled. A <code>null</code>
+     * maximum number of splits to perform can be controlled. A <code>null</code>
      * separator will cause parsing to be on whitespace.</p>
      *
      * <p>This is useful for quickly splitting a String directly into
