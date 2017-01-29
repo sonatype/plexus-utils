@@ -250,7 +250,7 @@ public class MXSerializer implements XmlSerializer {
 
     /**
      * For maximum efficiency when writing indents the required output is pre-computed
-     * This is internal function that recomputes buffer after user requested chnages.
+     * This is internal function that recomputes buffer after user requested changes.
      */
     protected void rebuildIndentationBuf() {
         if(doIndent == false) return;

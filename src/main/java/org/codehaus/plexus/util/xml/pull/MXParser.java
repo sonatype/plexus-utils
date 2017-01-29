@@ -2645,7 +2645,7 @@ public class MXParser
         }
         final int versionEnd = pos - 1;
         parseXmlDeclWithVersion(versionStart, versionEnd);
-        preventBufferCompaction = false; // allow again buffer commpaction - pos MAY chnage
+        preventBufferCompaction = false; // allow again buffer commpaction - pos MAY change
     }
     //protected String xmlDeclVersion;
 
