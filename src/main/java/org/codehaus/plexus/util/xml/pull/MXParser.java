@@ -3078,7 +3078,7 @@ public class MXParser
     protected char more() throws IOException, XmlPullParserException {
         if(pos >= bufEnd) {
             fillBuf();
-            // this return value should be ignonored as it is used in epilog parsing ...
+            // this return value should be ignored as it is used in epilog parsing ...
             if(reachedEnd) return (char)-1;
         }
         final char ch = buf[pos++];
