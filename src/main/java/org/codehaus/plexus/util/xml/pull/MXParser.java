@@ -2355,7 +2355,7 @@ public class MXParser
             entityRefName = newString(buf, posStart, posEnd - posStart);
             for (int i = entityEnd - 1; i >= 0; --i)
             {
-                // take advantage that interning for newStirng is enforced
+                // take advantage that interning for newString is enforced
                 if(entityRefName == entityName[ i ]) {
                     if(tokenize) text = entityReplacement[ i ];
                     return entityReplacementBuf[ i ];
