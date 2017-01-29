@@ -154,7 +154,7 @@ public class SweeperPoolTest extends TestCase
             1,
             pool.getSize() );
         assertEquals(
-            "Expected 3 diposed objects",
+            "Expected 3 disposed objects",
             3,
             pool.testGetDisposedObjects().size() );
 
