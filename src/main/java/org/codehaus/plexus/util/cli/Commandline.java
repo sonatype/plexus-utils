@@ -246,7 +246,7 @@ public class Commandline
         }
 
         /**
-         * Return the number of arguments that preceeded this marker.
+         * Return the number of arguments that preceded this marker.
          * <p/>
          * <p>The name of the executable - if set - is counted as the
          * very first argument.</p>
