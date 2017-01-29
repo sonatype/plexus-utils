@@ -34,7 +34,7 @@ public class SweeperPool
     /** Sweeps the pool periodically to trim it's size */
     private transient Sweeper sweeper;
 
-    /** Absolute maxiumuim size of the pool.*/
+    /** Absolute maximum size of the pool.*/
     private transient int maxSize;
 
     /** The size the pool gets trimmed down to */
@@ -150,7 +150,7 @@ public class SweeperPool
 
     /**
      * Return the number of pooled objects. This is never
-     * greater than t maximuim size of the pool
+     * greater than t maximum size of the pool
      *
      * @return the number of pooled objects
      */

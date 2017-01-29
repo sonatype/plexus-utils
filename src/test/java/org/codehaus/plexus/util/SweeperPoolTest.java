@@ -92,7 +92,7 @@ public class SweeperPoolTest extends TestCase
         assertEquals( "Expected pool to contain 2 objects", 2, pool.getSize() );
         pool.put( o3 );
         assertEquals(
-            "Expected pool to contain only a maximuim of 2 objects.",
+            "Expected pool to contain only a maximum of 2 objects.",
             2,
             pool.getSize() );
         assertEquals(
