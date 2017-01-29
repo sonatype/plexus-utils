@@ -627,7 +627,7 @@ public class MXParser
         //int maxDepth = eventType == END_TAG ? this.depth + 1 : this.depth;
         //if(depth < 0 || depth > maxDepth) throw new IllegalArgumentException(
         if(depth < 0 || depth > this.depth) throw new IllegalArgumentException(
-                "napespace count may be for depth 0.."+this.depth+" not "+depth);
+                "namespace count may be for depth 0.."+this.depth+" not "+depth);
         return elNamespaceCount[ depth ];
     }
 

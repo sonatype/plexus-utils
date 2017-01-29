@@ -816,7 +816,7 @@ public interface XmlPullParser {
      *
      * @param index zero based index of attribute
      * @return attribute namespace,
-     *   empty string ("") is returned  if namesapces processing is not enabled or
+     *   empty string ("") is returned  if namespaces processing is not enabled or
      *   namespaces processing is enabled but attribute has no namespace (it has no prefix).
      */
     String getAttributeNamespace (int index);
