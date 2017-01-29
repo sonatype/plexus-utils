@@ -111,7 +111,7 @@ public class SweeperPoolTest extends TestCase
             "Expected pool size to be 0 after removing 2 objects",
             0,
             pool.getSize() );
-        assertNotSame( "Expected returned objects to be differnet", tmp, tmp2 );
+        assertNotSame( "Expected returned objects to be different", tmp, tmp2 );
 
     }
 
