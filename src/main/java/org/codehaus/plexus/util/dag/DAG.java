@@ -233,7 +233,7 @@ public class DAG implements Cloneable, Serializable
     /**
      * Return the list of labels of successor in order decided by topological sort
      *
-     * @param label The label of the vertex whose predecessors are serched
+     * @param label The label of the vertex whose predecessors are searched
      *
      * @return The list of labels. Returned list contains also
      *         the label passed as parameter to this method. This label should
