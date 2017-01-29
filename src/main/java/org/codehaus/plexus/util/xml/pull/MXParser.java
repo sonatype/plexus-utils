@@ -3208,7 +3208,7 @@ public class MXParser
         //        //[#x202A-#x218F]
         //        if(ch < '\u202A') return false;
         //        if(ch <= '\u218F') return true;
-        //        // added pairts [#x2800-#xD7FF] | [#xE000-#xFDCF] | [#xFDE0-#xFFEF] | [#x10000-#x10FFFF]
+        //        // added parts [#x2800-#xD7FF] | [#xE000-#xFDCF] | [#xFDE0-#xFFEF] | [#x10000-#x10FFFF]
         //        if(ch < '\u2800') return false;
         //        if(ch <= '\uFFEF') return true;
         //        return false;
@@ -3238,7 +3238,7 @@ public class MXParser
         //        //[#x202A-#x218F]
         //        else if(ch < '\u202A') return false;
         //        else if(ch <= '\u218F') return true;
-        //        // added pairts [#x2800-#xD7FF] | [#xE000-#xFDCF] | [#xFDE0-#xFFEF] | [#x10000-#x10FFFF]
+        //        // added parts [#x2800-#xD7FF] | [#xE000-#xFDCF] | [#xFDE0-#xFFEF] | [#x10000-#x10FFFF]
         //        else if(ch < '\u2800') return false;
         //        else if(ch <= '\uFFEF') return true;
         //else return false;
