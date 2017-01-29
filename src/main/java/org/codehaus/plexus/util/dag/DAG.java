@@ -84,18 +84,18 @@ public class DAG implements Cloneable, Serializable
     // ------------------------------------------------------------
 
     /**
-     * Adds vertex to DAG. If vertex of given label alredy exist in DAG
+     * Adds vertex to DAG. If vertex of given label already exist in DAG
      * no vertex is added
      *
      * @param label The lable of the Vertex
      * @return New vertex if vertext of given label was not presenst in the DAG
-     *         or exising vertex if vertex of given labale was alredy added to DAG
+     *         or exising vertex if vertex of given labale was already added to DAG
      */
     public Vertex addVertex( final String label )
     {
         Vertex retValue = null;
 
-        // check if vertex is alredy in DAG
+        // check if vertex is already in DAG
         if ( vertexMap.containsKey( label ) )
         {
             retValue = vertexMap.get( label );

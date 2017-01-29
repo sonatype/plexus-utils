@@ -759,7 +759,7 @@ public class MXSerializer implements XmlSerializer {
             if(doIndent && seenTag) { writeIndent(); }
             out.write("</");
             if(namespace != null && namespace.length() > 0) {
-                //TODO prefix should be alredy known from matching start tag ...
+                //TODO prefix should be already known from matching start tag ...
                 final String prefix = lookupOrDeclarePrefix( namespace );
                 //assert( prefix != null);
                 if(prefix.length() > 0) {
