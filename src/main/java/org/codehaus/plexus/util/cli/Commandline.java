@@ -267,7 +267,7 @@ public class Commandline
     }
 
     /**
-     * <p>Sets the shell or command-line interpretor for the detected operating system,
+     * <p>Sets the shell or command-line interpreter for the detected operating system,
      * and the shell arguments.</p>
      */
     private void setDefaultShell()
