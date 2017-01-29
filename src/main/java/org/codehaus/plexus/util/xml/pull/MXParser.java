@@ -1299,7 +1299,7 @@ public class MXParser
                         throw new XmlPullParserException(
                             "unexpected character in markup "+printable(ch), this, null);
                     }
-                    // do content comapctation if it makes sense!!!!
+                    // do content compaction if it makes sense!!!!
 
                 } else if(ch == '&') {
                     // work on ENTITTY
@@ -2645,7 +2645,7 @@ public class MXParser
         }
         final int versionEnd = pos - 1;
         parseXmlDeclWithVersion(versionStart, versionEnd);
-        preventBufferCompaction = false; // allow again buffer commpaction - pos MAY change
+        preventBufferCompaction = false; // allow again buffer compaction - pos MAY change
     }
     //protected String xmlDeclVersion;
 
