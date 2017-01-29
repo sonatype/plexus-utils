@@ -2977,7 +2977,7 @@ public class MXParser
             } else if(!compact) {
                 //freeSpace
                 if(bufStart < buf.length / 2) {
-                    // less then half buffer available forcompactin --> expand instead!!!
+                    // less then half buffer available for compacting --> expand instead!!!
                     expand = true;
                 } else {
                     // at least half of buffer can be reclaimed --> worthwhile effort!!!
