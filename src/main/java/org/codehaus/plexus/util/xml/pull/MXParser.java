@@ -1012,7 +1012,7 @@ public class MXParser
         if(processNamespaces == false && namespace != null) {
             throw new XmlPullParserException(
                 "processing namespaces must be enabled on parser (or factory)"+
-                    " to have possible namespaces delcared on elements"
+                    " to have possible namespaces declared on elements"
                     +(" (postion:"+ getPositionDescription())+")");
         }
         if (type != getEventType()
