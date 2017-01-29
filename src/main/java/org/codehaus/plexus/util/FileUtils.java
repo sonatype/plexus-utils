@@ -890,7 +890,7 @@ public class FileUtils
      * </pre>
      *
      * @param filepath          the path of the file
-     * @param fileSeparatorChar the file separator character like <b>/</b> on Unix plateforms.
+     * @param fileSeparatorChar the file separator character like <b>/</b> on Unix platforms.
      * @return the filename minus path
      */
     public static String removePath( final String filepath, final char fileSeparatorChar )
@@ -930,7 +930,7 @@ public class FileUtils
      * </pre>
      *
      * @param filepath          the filepath
-     * @param fileSeparatorChar the file separator character like <b>/</b> on Unix plateforms.
+     * @param fileSeparatorChar the file separator character like <b>/</b> on Unix platforms.
      * @return the filename minus path
      */
     public static String getPath( final String filepath, final char fileSeparatorChar )
