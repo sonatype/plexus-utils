@@ -1884,7 +1884,7 @@ public class MXParser
 
             //TODO
             //[ WFC: Unique Att Spec ]
-            // check namespaced attribute uniqueness contraint!!!
+            // check namespaced attribute uniqueness constraint!!!
 
             for (int i = 1; i < attributeCount; i++)
             {
@@ -1912,7 +1912,7 @@ public class MXParser
         } else { // ! processNamespaces
 
             //[ WFC: Unique Att Spec ]
-            // check raw attribute uniqueness contraint!!!
+            // check raw attribute uniqueness constraint!!!
             for (int i = 1; i < attributeCount; i++)
             {
                 for (int j = 0; j < i; j++)
