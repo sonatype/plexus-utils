@@ -490,7 +490,7 @@ public class MXParser
             //}
             roundtripSupported = state;
         } else {
-            throw new XmlPullParserException("unsupporte feature "+name);
+            throw new XmlPullParserException("unsupported feature "+name);
         }
     }
 
