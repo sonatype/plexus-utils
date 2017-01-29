@@ -391,7 +391,7 @@ public interface XmlPullParser {
 
     /**
      * If this feature is activated, all validation errors as
-     * defined in the XML 1.0 sepcification are reported.
+     * defined in the XML 1.0 specification are reported.
      * This implies that FEATURE_PROCESS_DOCDECL is true and both, the
      * internal and external document type declaration will be processed.
      * <p><strong>Please Note:</strong> This feature can not be changed
