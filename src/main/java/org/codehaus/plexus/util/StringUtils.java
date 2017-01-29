@@ -717,7 +717,7 @@ public class StringUtils
     }
 
     /**
-     * <p>Replace all occurances of a char within another char.</p>
+     * <p>Replace all occurrences of a char within another char.</p>
      *
      * <p>A <code>null</code> reference passed to this method is a no-op.</p>
      *
@@ -766,7 +766,7 @@ public class StringUtils
     }
 
     /**
-     * <p>Replace all occurances of a String within another String.</p>
+     * <p>Replace all occurrences of a String within another String.</p>
      *
      * <p>A <code>null</code> reference passed to this method is a no-op.</p>
      *
@@ -1703,7 +1703,7 @@ public class StringUtils
      *
      * @param str the String to check
      * @param sub the substring to count
-     * @return the number of occurances, 0 if the String is <code>null</code>
+     * @return the number of occurrences, 0 if the String is <code>null</code>
      * @throws NullPointerException if sub is <code>null</code>
      */
     public static int countMatches( String str, String sub )
