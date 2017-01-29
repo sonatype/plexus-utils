@@ -2506,7 +2506,7 @@ public class MXParser
                             {
                                 if(piTargetStart > 3) {  //<?xml is allowed as first characters in input ...
                                     throw new XmlPullParserException(
-                                        "processing instruction can not have PITarget with reserveld xml name",
+                                        "processing instruction can not have PITarget with reserved xml name",
                                         this, null);
                                 } else {
                                     if(buf[piTargetStart] != 'x'
