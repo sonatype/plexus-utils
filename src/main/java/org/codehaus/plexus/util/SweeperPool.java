@@ -176,7 +176,7 @@ public class SweeperPool
             }
             catch ( InterruptedException e )
             {
-                System.err.println( "Unexpected execption occurred: " );
+                System.err.println( "Unexpected exceptionexception occurred: " );
                 e.printStackTrace();
             }
         }
