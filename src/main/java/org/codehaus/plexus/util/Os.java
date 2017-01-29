@@ -275,7 +275,7 @@ public class Os
      * Determines if the current OS matches the given OS
      * family, name, architecture and version.
      * 
-     * The name, archictecture and version are compared to
+     * The name, architecture and version are compared to
      * the System properties os.name, os.version and os.arch
      * in a case-independent way.
      * 
