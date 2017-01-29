@@ -587,7 +587,7 @@ public final class TypeFormat {
     /**
      * Formats the specified <code>float</code> and appends the resulting text
      * to the <code>StringBuffer</code> argument; the number of significative
-     * digits is deduced from the specifed precision. All digits at least as
+     * digits is deduced from the specified precision. All digits at least as
      * significant as the specified precision are represented. For example:
      * <ul>
      * <li><code>format(5.6f, 0.01f, sb)</code> appends <code>"5.60"</code></li>
@@ -672,7 +672,7 @@ public final class TypeFormat {
     /**
      * Formats the specified <code>double</code> and appends the resulting text
      * to the <code>StringBuffer</code> argument; the number of significative
-     * digits is deduced from the specifed precision. All digits at least as
+     * digits is deduced from the specified precision. All digits at least as
      * significant as the specified precision are represented. For example:
      * <ul>
      * <li><code>format(5.6, 0.01, sb)</code> appends <code>"5.60"</code></li>
@@ -714,7 +714,7 @@ public final class TypeFormat {
     /**
      * Formats the specified <code>double</code> and appends the resulting text
      * to the <code>StringBuffer</code> argument; the number of significative
-     * digits is deduced from the specifed precision.
+     * digits is deduced from the specified precision.
      *
      * @param  d the <code>double</code> number.
      * @param  precision the maximum weight of the last digit represented.
