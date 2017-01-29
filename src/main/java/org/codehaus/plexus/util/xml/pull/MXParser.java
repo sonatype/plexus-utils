@@ -497,7 +497,7 @@ public class MXParser
     /** Unknown properties are <string>always</strong> returned as false */
     public boolean getFeature(String name)
     {
-        if(name == null) throw new IllegalArgumentException("feature name should not be nulll");
+        if(name == null) throw new IllegalArgumentException("feature name should not be null");
         if(FEATURE_PROCESS_NAMESPACES.equals(name)) {
             return processNamespaces;
             //        } else if(FEATURE_REPORT_NAMESPACE_ATTRIBUTES.equals(name)) {
@@ -529,7 +529,7 @@ public class MXParser
 
     public Object getProperty(String name)
     {
-        if(name == null) throw new IllegalArgumentException("property name should not be nulll");
+        if(name == null) throw new IllegalArgumentException("property name should not be null");
         if(PROPERTY_XMLDECL_VERSION.equals(name)) {
             return xmlDeclVersion;
         } else if(PROPERTY_XMLDECL_STANDALONE.equals(name)) {
