@@ -1897,7 +1897,7 @@ public class MXParser
                                            && attributeName[j].equals(attributeName[i])) )
 
                       ) {
-                        // prepare data for nice error messgae?
+                        // prepare data for nice error message?
                         String attr1 = attributeName[j];
                         if(attributeUri[j] != null) attr1 = attributeUri[j]+":"+attr1;
                         String attr2 = attributeName[i];
@@ -1923,7 +1923,7 @@ public class MXParser
                                     && attributeName[j].equals(attributeName[i])) )
 
                       ) {
-                        // prepare data for nice error messgae?
+                        // prepare data for nice error message?
                         final String attr1 = attributeName[j];
                         final String attr2 = attributeName[i];
                         throw new XmlPullParserException(
