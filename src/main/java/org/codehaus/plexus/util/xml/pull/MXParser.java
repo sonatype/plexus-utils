@@ -653,7 +653,7 @@ public class MXParser
             return namespaceUri[ pos ];
         } else {
             throw new XmlPullParserException(
-                "position "+pos+" exceedded number of available namespaces "+namespaceEnd);
+                "position "+pos+" exceeded number of available namespaces "+namespaceEnd);
         }
     }
 
