@@ -1982,7 +1982,7 @@ public class FileUtils
      * @param sourceDirectory      the source dir
      * @param destinationDirectory the target dir
      * @param includes             include pattern
-     * @param excludes             exlucde pattern
+     * @param excludes             exclude pattern
      * @throws IOException if any
      * @see #getFiles(File, String, String)
      */
@@ -2015,7 +2015,7 @@ public class FileUtils
      * @param sourceDirectory      the source dir
      * @param destinationDirectory the target dir
      * @param includes             include pattern
-     * @param excludes             exlucde pattern
+     * @param excludes             exclude pattern
      * @throws IOException if any
      * @since 1.5.7
      */
