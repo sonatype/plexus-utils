@@ -45,7 +45,7 @@ public class DAG implements Cloneable, Serializable
     private Map<String, Vertex> vertexMap = new HashMap<String, Vertex>();
 
     /**
-     * Conatin list of all verticies
+     * Contain list of all verticies
      */
     private List<Vertex> vertexList = new ArrayList<Vertex>();
 
