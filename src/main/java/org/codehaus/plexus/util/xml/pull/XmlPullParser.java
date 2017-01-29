@@ -604,7 +604,7 @@ public interface XmlPullParser {
      * </pre>
      *
      * <p><strong>Please note:</strong> parser implementations
-     * may provide more efifcient lookup, e.g. using a Hashtable.
+     * may provide more efficient lookup, e.g. using a Hashtable.
      * The 'xml' prefix is bound to "http://www.w3.org/XML/1998/namespace", as
      * defined in the
      * <a href="http://www.w3.org/TR/REC-xml-names/#ns-using">Namespaces in XML</a>
