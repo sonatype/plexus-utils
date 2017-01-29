@@ -2301,7 +2301,7 @@ public class FileUtils
      * @param encoding  the file output encoding (only if wrappers is not empty)
      * @param wrappers  array of {@link FilterWrapper}
      * @param overwrite if true and f wrappers is null or empty, the file will be copy
-     *                  enven if to.lastModified() < from.lastModified()
+     *                  even if to.lastModified() < from.lastModified()
      * @throws IOException if an IO error occurs during copying or filtering
      * @since 1.5.2
      */
