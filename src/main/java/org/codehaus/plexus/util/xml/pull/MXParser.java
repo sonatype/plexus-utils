@@ -1040,7 +1040,7 @@ public class MXParser
 
 
     /**
-     * Skip sub tree that is currently porser positioned on.
+     * Skip sub tree that is currently parser positioned on.
      * <br>NOTE: parser must be on START_TAG and when function returns
      * parser will be positioned on corresponding END_TAG
      */
