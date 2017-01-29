@@ -151,7 +151,7 @@ public class TestThreadManager
     }
 
     /**
-     * Overide this to add your own stuff. Called after
+     * Override this to add your own stuff. Called after
      * <code>registerThread(Object)</code>
      *
      * @param thread DOCUMENT ME!
