@@ -1302,7 +1302,7 @@ public class MXParser
                     // do content compaction if it makes sense!!!!
 
                 } else if(ch == '&') {
-                    // work on ENTITTY
+                    // work on ENTITY
                     //posEnd = pos - 1;
                     if(tokenize && hadCharData) {
                         seenAmpersand = true;
@@ -2332,7 +2332,7 @@ public class MXParser
         }
     }
 
-    protected char[] lookuEntityReplacement(int entitNameLen)
+    protected char[] lookuEntityReplacement(int entityNameLen)
         throws XmlPullParserException, IOException
 
     {
@@ -2341,9 +2341,9 @@ public class MXParser
             LOOP:
             for (int i = entityEnd - 1; i >= 0; --i)
             {
-                if(hash == entityNameHash[ i ] && entitNameLen == entityNameBuf[ i ].length) {
+                if(hash == entityNameHash[ i ] && entityNameLen == entityNameBuf[ i ].length) {
                     final char[] entityBuf = entityNameBuf[ i ];
-                    for (int j = 0; j < entitNameLen; j++)
+                    for (int j = 0; j < entityNameLen; j++)
                     {
                         if(buf[posStart + j] != entityBuf[j]) continue LOOP;
                     }

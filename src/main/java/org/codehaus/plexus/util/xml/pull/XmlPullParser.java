@@ -914,7 +914,7 @@ public interface XmlPullParser {
     /**
      * Get next parsing event - element content wil be coalesced and only one
      * TEXT event must be returned for whole element content
-     * (comments and processing instructions will be ignored and emtity references
+     * (comments and processing instructions will be ignored and entity references
      * must be expanded or exception mus be thrown if entity reerence can not be exapnded).
      * If element content is empty (content is "") then no TEXT event will be reported.
      *
