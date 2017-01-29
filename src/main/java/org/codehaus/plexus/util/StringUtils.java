@@ -1104,7 +1104,7 @@ public class StringUtils
     public static String escape( String str )
     {
         // improved with code from  cybertiger@cyberiantiger.org
-        // unicode from him, and defaul for < 32's.
+        // unicode from him, and default for < 32's.
         int sz = str.length();
         StringBuilder buffer = new StringBuilder( 2 * sz );
         for ( int i = 0; i < sz; i++ )
